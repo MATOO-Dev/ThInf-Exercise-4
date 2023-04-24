@@ -41,22 +41,22 @@ int main()
     #pragma region Task 2.1 
 
     //single digit natural numbers
-    regexValidator::ValidateSingleDigit();
+    //regexValidator::ValidateSingleDigit();
     
     //single or multi digit natural numbers
-    regexValidator::ValidateMultipleDigits();
+    //regexValidator::ValidateMultipleDigits();
 
     //"-" or "" signed natural numbers
-    regexValidator::ValidateNegativeSignedDigits();
+    //regexValidator::ValidateNegativeSignedDigits();
 
     //"+" or "" signed natural numbers
-    regexValidator::ValidatePositiveSignedDigits();
+    //regexValidator::ValidatePositiveSignedDigits();
 
     //"+" or "-" or "" signed natural numbers
-    regexValidator::ValidateAnySignedDigits();
+    //regexValidator::ValidateAnySignedDigits();
 
     //real numbers
-    regexValidator::ValidateRealNumber();
+    //regexValidator::ValidateRealNumber();
 
     #pragma endregion
 
