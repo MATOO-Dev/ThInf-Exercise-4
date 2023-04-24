@@ -1,8 +1,7 @@
 #include <cstddef>
 #include <iostream>
 #include <string>
-#include "include/emailRegex.h"
-#include "include/numberRegex.h"
+#include "include/regexValidator.h"
 
 /*
 Task 1
@@ -22,34 +21,35 @@ Regulärer Ausdruck r, der L(r)=L(G1) erzeugt:
 
 int main()
 {
-    //test();
-
+    /*
     #pragma region Task 2.1 
 
     //single digit natural numbers
-    numberRegex::ValidateSingleDigit();
+    regexValidator::ValidateSingleDigit();
     
     //single or multi digit natural numbers
-    numberRegex::ValidateMultipleDigits();
+    regexValidator::ValidateMultipleDigits();
 
     //"-" or "" signed natural numbers
-    numberRegex::ValidateNegativeSignedDigits();
+    regexValidator::ValidateNegativeSignedDigits();
 
     //"+" or "" signed natural numbers
-    numberRegex::ValidatePositiveSignedDigits();
+    regexValidator::ValidatePositiveSignedDigits();
 
     //"+" or "-" or "" signed natural numbers
-    numberRegex::ValidateAnySignedDigits();
+    regexValidator::ValidateAnySignedDigits();
 
     //real numbers
-    numberRegex::ValidateRealNumber();
+    regexValidator::ValidateRealNumber();
 
     #pragma endregion
-    
+    */
+
     #pragma region Task 2.2 
 
-
+    regexValidator::ValidateEmailAdress();
 
     #pragma endregion
+
     return 0;
 }

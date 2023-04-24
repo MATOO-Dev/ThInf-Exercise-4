@@ -1,21 +1,25 @@
-#include "../include/numberRegex.h"
+#include "../include/regexValidator.h"
 #include <regex>
 
 // \d = all digits
-std::regex numberRegex::singleDigitRegex = std::regex("\\d");
+std::regex regexValidator::singleDigitRegex = std::regex("\\d");
 // \d+ = all digits 1-n times
-std::regex numberRegex::multiDigitRegex = std::regex("\\d+");
+std::regex regexValidator::multiDigitRegex = std::regex("\\d+");
 // -? = "-" 0-1 times
-std::regex numberRegex::negativeSignedRegex = std::regex("-?\\d+");
+std::regex regexValidator::negativeSignedRegex = std::regex("-?\\d+");
 // \+? = "+" 0-1 times
-std::regex numberRegex::positiveSignedRegex = std::regex("\\+?\\d+");
+std::regex regexValidator::positiveSignedRegex = std::regex("\\+?\\d+");
 // (\+|-)? = "+" or "-" 0-1 times
-std::regex numberRegex::anySignedRegex = std::regex("(\\+|-)?\\d+");
+std::regex regexValidator::anySignedRegex = std::regex("(\\+|-)?\\d+");
 // combine and add \. for "."
-std::regex numberRegex::realNumberRegex = std::regex("(\\+|-)?\\d+\\.\\d+");
+std::regex regexValidator::realNumberRegex = std::regex("(\\+|-)?\\d+\\.\\d+");
+
+//email adress
+std::regex regexValidator::emailRegex = std::regex("\\w+(.\\w+)?@\\w+(-\\w+)?\\.\\w+");
 
 
-void numberRegex::ValidateSingleDigit()
+
+void regexValidator::ValidateSingleDigit()
 {
     std::cout << "Please enter a single digit, e.g. 5" << std::endl;
     std::string userInput; 
@@ -23,7 +27,7 @@ void numberRegex::ValidateSingleDigit()
     ValidateRegex(userInput, singleDigitRegex);
 }
 
-void numberRegex::ValidateMultipleDigits()
+void regexValidator::ValidateMultipleDigits()
 {
     std::cout << "Please enter a single or multiple digits (without a sign), e.g. 559" << std::endl;
     std::string userInput; 
@@ -31,7 +35,7 @@ void numberRegex::ValidateMultipleDigits()
     ValidateRegex(userInput, multiDigitRegex);
 }
 
-void numberRegex::ValidateNegativeSignedDigits()
+void regexValidator::ValidateNegativeSignedDigits()
 {
     std::cout << "Please enter a single or multiple digits (with or without a minus sign -), e.g. -559" << std::endl;
     std::string userInput; 
@@ -39,7 +43,7 @@ void numberRegex::ValidateNegativeSignedDigits()
     ValidateRegex(userInput, negativeSignedRegex);
 }
 
-void numberRegex::ValidatePositiveSignedDigits()
+void regexValidator::ValidatePositiveSignedDigits()
 {
     std::cout << "Please enter a single or multiple digits (with or without a plus sign +), e.g. +559" << std::endl;
     std::string userInput; 
@@ -47,7 +51,7 @@ void numberRegex::ValidatePositiveSignedDigits()
     ValidateRegex(userInput, positiveSignedRegex);
 }
 
-void numberRegex::ValidateAnySignedDigits()
+void regexValidator::ValidateAnySignedDigits()
 {
     std::cout << "Please enter a single or multiple digits (with or without a minus - or plus sign +), e.g. -903" << std::endl;
     std::string userInput; 
@@ -55,7 +59,7 @@ void numberRegex::ValidateAnySignedDigits()
     ValidateRegex(userInput, anySignedRegex);
 }
 
-void numberRegex::ValidateRealNumber()
+void regexValidator::ValidateRealNumber()
 {
     std::cout << "Please enter a real number (with or without a minus - or plus sign +), e.g. -3.14159" << std::endl;
     std::string userInput; 
@@ -63,7 +67,15 @@ void numberRegex::ValidateRealNumber()
     ValidateRegex(userInput, realNumberRegex);
 }
 
-void numberRegex::ValidateRegex(std::string input, std::regex expression)
+void regexValidator::ValidateEmailAdress()
+{
+    std::cout << "Please enter a valid email adress:" << std::endl;
+    std::string userInput; 
+    std::cin >> userInput;
+    ValidateRegex(userInput, emailRegex);
+}
+
+void regexValidator::ValidateRegex(std::string input, std::regex expression)
 {
     //check if input matches expression
     bool result = std::regex_match(input, expression, std::regex_constants::match_default);
