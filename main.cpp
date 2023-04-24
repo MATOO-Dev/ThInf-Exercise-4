@@ -56,13 +56,13 @@ int main()
     //regexValidator::ValidateAnySignedDigits();
 
     //real numbers
-    //regexValidator::ValidateRealNumber();
+    regexValidator::ValidateRealNumber();
 
     #pragma endregion
 
     #pragma region Task 2.2 
 
-    regexValidator::ValidateEmailAdress();
+    //regexValidator::ValidateEmailAdress();
 
     #pragma endregion
 

@@ -12,7 +12,7 @@ std::regex regexValidator::positiveSignedRegex = std::regex("\\+?\\d+");
 // (\+|-)? = "+" or "-" 0-1 times
 std::regex regexValidator::anySignedRegex = std::regex("(\\+|-)?\\d+");
 // combine and add \. for "."
-std::regex regexValidator::realNumberRegex = std::regex("(\\+|-)?\\d+\\.\\d+");
+std::regex regexValidator::realNumberRegex = std::regex("(\\+|-)?\\d+(\\.\\d+)?");
 //basic email adress, format: text[.text]@text[-text].text
 std::regex regexValidator::emailRegex = std::regex("\\w+(.\\w+)?@\\w+(-\\w+)?\\.\\w+");
 //note: this doesnt account for
