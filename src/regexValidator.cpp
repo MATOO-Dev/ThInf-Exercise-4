@@ -13,10 +13,12 @@ std::regex regexValidator::positiveSignedRegex = std::regex("\\+?\\d+");
 std::regex regexValidator::anySignedRegex = std::regex("(\\+|-)?\\d+");
 // combine and add \. for "."
 std::regex regexValidator::realNumberRegex = std::regex("(\\+|-)?\\d+\\.\\d+");
-
-//email adress
+//basic email adress, format: text[.text]@text[-text].text
 std::regex regexValidator::emailRegex = std::regex("\\w+(.\\w+)?@\\w+(-\\w+)?\\.\\w+");
-
+//note: this doesnt account for
+//numbers
+//min / max length
+//etc. etc.
 
 
 void regexValidator::ValidateSingleDigit()
